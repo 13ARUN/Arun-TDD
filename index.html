@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Management System</title>
+    <style>
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1>User Management</h1>
+    <form id="userForm">
+        <input type="hidden" id="userId">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" placeholder="Last Name" required>
+        <button type="submit">Add User</button>
+        <button type="button" id="cancelEdit" class="hidden">Cancel</button>
+    </form>
+    <h2>Users List</h2>
+    <ul id="usersList"></ul>
+
+    <h1>Group Management</h1>
+    <form id="groupForm">
+        <input type="text" id="groupName" placeholder="Group Name" required>
+        <button type="submit">Create Group</button>
+    </form>
+    <h2>Groups List</h2>
+    <ul id="groupsList"></ul>
+
+    <h1>Role Management</h1>
+    <form id="roleForm">
+        <input type="text" id="roleName" placeholder="Role Name" required>
+        <input type="text" id="roleDescription" placeholder="Role Description" required>
+        <button type="submit">Create Role</button>
+    </form>
+    <h2>Roles List</h2>
+    <ul id="rolesList"></ul>
+
+    <h2>Assign Users to Groups</h2>
+    <form id="assignUsersToGroupsForm">
+        <select id="selectGroup" required></select>
+        <select id="selectUsers" multiple required></select>
+        <button type="submit">Assign Users to Group</button>
+    </form>
+
+    <h2>Assign Roles to Users</h2>
+    <form id="assignRolesToUsersForm">
+        <select id="selectRole" required></select>
+        <select id="selectUsersForRole" multiple required></select>
+        <button type="submit">Assign Roles to Users</button>
+    </form>
+
+    <h2>Assign Roles to Groups</h2>
+    <form id="assignRolesToGroupsForm">
+        <select id="selectRoleForGroup" required></select>
+        <select id="selectGroupsForRole" multiple required></select>
+        <button type="submit">Assign Roles to Groups</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
