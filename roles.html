@@ -3,9 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roles</title>
+    <title>Role Management</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <div class="sidebar">
+        <a id="user" href="users.html">User Management</a>
+        <a id="group" href="groups.html">Group Management</a>
+        <a id="role" href="roles.html" class="active">Role Management</a>
+    </div>
+    <div class="content">
+        <h2>Role Management</h2>
+
+        <!-- Create Role Form -->
+        <form id="createRoleForm">
+            <h3>Create Role</h3>
+            <label for="roleName">Role Name:</label>
+            <input type="text" id="roleName" required>
+            <label for="roleDescription">Role Description:</label>
+            <input type="text" id="roleDescription" required>
+            <button type="submit">Create Role</button>
+        </form>
+
+        <!-- Roles List -->
+        <h3 id="roleList">Roles List</h3>
+        <table id="rolesTable">
+            <thead>
+                <tr>
+                    <th>Role Name</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic role rows go here -->
+            </tbody>
+        </table>
+
+        <!-- Assign Roles to User Form -->
+        <form id="assignRolesToUserForm">
+            <h3>Assign Roles to User</h3>
+            <label for="roleSelect">Select Role:</label>
+            <select id="roleSelect" required></select>
+            <label for="usersSelect">Select Users:</label>
+            <select id="usersSelect" multiple required></select>
+            <button type="submit">Assign Roles to Users</button>
+        </form>
+
+        <!-- Assign Roles to Group Form -->
+        <form id="assignRolesToGroupForm">
+            <h3>Assign Roles to Group</h3>
+            <label for="groupRoleSelect">Select Role:</label>
+            <select id="groupRoleSelect" required></select><br>
+            <label for="groupsSelect">Select Groups:</label>
+            <select id="groupsSelect" multiple required></select><br>
+            <button type="submit">Assign Roles to Groups</button>
+        </form>
+
+        <!-- View Role Assignments -->
+        <h3 id="roleAssignments">Role Assignments</h3>
+        <table id="roleAssignmentsTable">
+            <thead>
+                <tr>
+                    <th>Role Name</th>
+                    <th>Assigned Users</th>
+                    <th>Assigned Groups</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic role assignment rows go here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

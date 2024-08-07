@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Groups</title>
+    <title>Group Management</title>
+    <link rel="stylesheet" href="css/stylescss">
 </head>
 <body>
-    
+    <div class="sidebar">
+        <a id="user" href="users.html">User Management</a>
+        <a id="group" href="groups.html" class="active">Group Management</a>
+        <a id="role" href="roles.html">Role Management</a>
+    </div>
+    <div class="content">
+        <h2>Group Management</h2>
+
+        <!-- Create Group Form -->
+        <form id="createGroupForm">
+            <h3>Create Group</h3>
+            <label for="groupName">Group Name:</label>
+            <input type="text" id="groupName" required>
+            <button type="submit">Create Group</button>
+        </form>
+
+        <!-- Groups List -->
+        <h3 id="groupList">Groups List</h3>
+        <table id="groupsTable">
+            <thead>
+                <tr>
+                    <th>Group Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic group rows go here -->
+            </tbody>
+        </table>
+
+        <!-- Add Users to Group Form -->
+        <form id="addUsersToGroupForm">
+            <h3>Add Users to Group</h3>
+            <label for="groupSelect">Select Group:</label>
+            <select id="groupSelect" required></select>
+            <label for="usersSelect">Select Users:</label>
+            <select id="usersSelect" multiple required></select>
+            <button type="submit">Add Users to Group</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

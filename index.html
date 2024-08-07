@@ -2,63 +2,217 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Management System</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        .hidden { display: none; }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            height: 90vh;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+        }
+        .sidebar a.active {
+            background-color: #575757;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
-    <h1>User Management</h1>
-    <form id="userForm">
-        <input type="hidden" id="userId">
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="text" id="firstName" placeholder="First Name" required>
-        <input type="text" id="lastName" placeholder="Last Name" required>
-        <button type="submit">Add User</button>
-        <button type="button" id="cancelEdit" class="hidden">Cancel</button>
-    </form>
-    <h2>Users List</h2>
-    <ul id="usersList"></ul>
+    <div class="sidebar">
+        <a href="#user-management" class="tab-link active" onclick="showTab('user-management')">User Management</a>
+        <a href="#group-management" class="tab-link" onclick="showTab('group-management')">Group Management</a>
+        <a href="#role-management" class="tab-link" onclick="showTab('role-management')">Role Management</a>
+    </div>
+    <div class="content">
+        <div id="user-management" class="tab-content active">
+            <div>
+                <h2>User Management</h2>
+            
+                <!-- Add User Form -->
+                <form id="addUserForm">
+                    <h3>Add User</h3>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required><br>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" required><br>
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" required><br>
+                    <button type="submit">Add User</button>
+                </form>
+            
+                <!-- Users List -->
+                <h3>Users List</h3>
+                <table id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic user rows go here -->
+                    </tbody>
+                </table>
+            
+                <!-- Update User Form -->
+                <form id="updateUserForm" style="display:none;">
+                    <h3>Update User</h3>
+                    <label for="updateUsername">Username:</label>
+                    <input type="text" id="updateUsername" required><br>
+                    <label for="updateEmail">Email:</label>
+                    <input type="email" id="updateEmail" required><br>
+                    <label for="updateFirstName">First Name:</label>
+                    <input type="text" id="updateFirstName" required><br>
+                    <label for="updateLastName">Last Name:</label>
+                    <input type="text" id="updateLastName" required><br>
+                    <button type="submit">Update User</button>
+                </form>
+            </div>
+            
+        </div>
+        <div id="group-management" class="tab-content">
+            <div>
+                <h2>Group Management</h2>
+            
+                <!-- Create Group Form -->
+                <form id="createGroupForm">
+                    <h3>Create Group</h3>
+                    <label for="groupName">Group Name:</label>
+                    <input type="text" id="groupName" required><br>
+                    <button type="submit">Create Group</button>
+                </form>
+            
+                <!-- Groups List -->
+                <h3>Groups List</h3>
+                <table id="groupsTable">
+                    <thead>
+                        <tr>
+                            <th>Group Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic group rows go here -->
+                    </tbody>
+                </table>
+            
+                <!-- Add Users to Group Form -->
+                <form id="addUsersToGroupForm">
+                    <h3>Add Users to Group</h3>
+                    <label for="groupSelect">Select Group:</label>
+                    <select id="groupSelect" required></select><br>
+                    <label for="usersSelect">Select Users:</label>
+                    <select id="usersSelect" multiple required></select><br>
+                    <button type="submit">Add Users to Group</button>
+                </form>
+            </div>
+            
+        </div>
+        <div id="role-management" class="tab-content">
+            <div>
+                <h2>Role Management</h2>
+            
+                <!-- Create Role Form -->
+                <form id="createRoleForm">
+                    <h3>Create Role</h3>
+                    <label for="roleName">Role Name:</label>
+                    <input type="text" id="roleName" required><br>
+                    <label for="roleDescription">Role Description:</label>
+                    <input type="text" id="roleDescription" required><br>
+                    <button type="submit">Create Role</button>
+                </form>
+            
+                <!-- Roles List -->
+                <h3>Roles List</h3>
+                <table id="rolesTable">
+                    <thead>
+                        <tr>
+                            <th>Role Name</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic role rows go here -->
+                    </tbody>
+                </table>
+            
+                <!-- Assign Roles to User Form -->
+                <form id="assignRolesToUserForm">
+                    <h3>Assign Roles to User</h3>
+                    <label for="roleSelect">Select Role:</label>
+                    <select id="roleSelect" required></select><br>
+                    <label for="usersSelect">Select Users:</label>
+                    <select id="usersSelect" multiple required></select><br>
+                    <button type="submit">Assign Roles to Users</button>
+                </form>
+            
+                <!-- Assign Roles to Group Form -->
+                <form id="assignRolesToGroupForm">
+                    <h3>Assign Roles to Group</h3>
+                    <label for="groupRoleSelect">Select Role:</label>
+                    <select id="groupRoleSelect" required></select><br>
+                    <label for="groupsSelect">Select Groups:</label>
+                    <select id="groupsSelect" multiple required></select><br>
+                    <button type="submit">Assign Roles to Groups</button>
+                </form>
+            
+                <!-- View Role Assignments -->
+                <h3>Role Assignments</h3>
+                <table id="roleAssignmentsTable">
+                    <thead>
+                        <tr>
+                            <th>Role Name</th>
+                            <th>Assigned Users</th>
+                            <th>Assigned Groups</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic role assignment rows go here -->
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
 
-    <h1>Group Management</h1>
-    <form id="groupForm">
-        <input type="text" id="groupName" placeholder="Group Name" required>
-        <button type="submit">Create Group</button>
-    </form>
-    <h2>Groups List</h2>
-    <ul id="groupsList"></ul>
-
-    <h1>Role Management</h1>
-    <form id="roleForm">
-        <input type="text" id="roleName" placeholder="Role Name" required>
-        <input type="text" id="roleDescription" placeholder="Role Description" required>
-        <button type="submit">Create Role</button>
-    </form>
-    <h2>Roles List</h2>
-    <ul id="rolesList"></ul>
-
-    <h2>Assign Users to Groups</h2>
-    <form id="assignUsersToGroupsForm">
-        <select id="selectGroup" required></select>
-        <select id="selectUsers" multiple required></select>
-        <button type="submit">Assign Users to Group</button>
-    </form>
-
-    <h2>Assign Roles to Users</h2>
-    <form id="assignRolesToUsersForm">
-        <select id="selectRole" required></select>
-        <select id="selectUsersForRole" multiple required></select>
-        <button type="submit">Assign Roles to Users</button>
-    </form>
-
-    <h2>Assign Roles to Groups</h2>
-    <form id="assignRolesToGroupsForm">
-        <select id="selectRoleForGroup" required></select>
-        <select id="selectGroupsForRole" multiple required></select>
-        <button type="submit">Assign Roles to Groups</button>
-    </form>
-
-    <script src="script.js"></script>
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`.sidebar a[href="#${tabId}"]`).classList.add('active');
+        }
+    </script>
 </body>
 </html>

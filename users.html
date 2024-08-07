@@ -3,9 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>
+    <title>User Management</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <div class="sidebar">
+        <a id="user" href="users.html" class="active">User Management</a>
+        <a id="group" href="groups.html">Group Management</a>
+        <a id="role" href="roles.html">Role Management</a>
+    </div>
+    <div class="content">
+        <h2>User Management</h2>
+
+        <!-- Add User Form -->
+        <form id="addUserForm">
+            <h3>Add User</h3>
+            <label for="userName">Username:</label>
+            <input type="text" id="userName" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" required>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" required>
+            <button type="submit">Add User</button>
+        </form>
+
+        <!-- Users List -->
+        <h3 id="userList">Users List</h3>
+        <table id="usersTable">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic user rows go here -->
+                <!-- <td>EP001</td>
+                <td>13Arun@gmail.com</td>
+                <td>ARUN</td>
+                <td>ESWAR</td>
+                <td>
+                    <button onclick="editUser(1)">Edit</button>
+                    <button onclick="deleteUser(1)">Delete</button>
+                </td> -->
+            </tbody>
+        </table>
+
+        <!-- Update User Form -->
+        <form id="updateUserForm" style="display:none;">
+            <h3>Update User</h3>
+            <label for="updateUsername">Username:</label>
+            <input type="text" id="updateUsername" required><br>
+            <label for="updateEmail">Email:</label>
+            <input type="email" id="updateEmail" required><br>
+            <label for="updateFirstName">First Name:</label>
+            <input type="text" id="updateFirstName" required><br>
+            <label for="updateLastName">Last Name:</label>
+            <input type="text" id="updateLastName" required><br>
+            <button type="submit">Update User</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
