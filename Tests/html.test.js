@@ -76,6 +76,8 @@ describe('HTML', () => {
         it('Title and Body', () => {
 
             checkElement('head', {});
+            checkTextContent('title',"User Management");
+            checkElement('link[rel="stylesheet"',{href:"css/style.css"});
             checkContains('body', ['.sidebar','.content','script']);
         });
 
@@ -100,13 +102,12 @@ describe('HTML', () => {
 
         describe('Content', () => {
 
-        
-
             it('Add User', () => {
 
                 checkContains('.content', ['h2','#addUserForm','h3','#usersTable','#updateUserForm']);
             
                 checkTextContent('.content h2', "User Management");
+
                 checkContains('#addUserForm', ['#addUserForm h3','#addUserForm label','#addUserForm input','#addUserForm button']);
 
                 checkTextContent('#addUserForm h3', "Add User");
@@ -137,7 +138,6 @@ describe('HTML', () => {
                 checkTextContent('#addUserForm button', "Add User");
 
             });
-
 
             it('User List', () => {
 
@@ -214,10 +214,11 @@ describe('HTML', () => {
     
         });
 
-
         it('Title and Body', () => {
 
             checkElement('head', {});
+            checkTextContent('title',"Group Management");
+            checkElement('link[rel="stylesheet"',{href:"css/style.css"});
             checkContains('body', ['.sidebar','.content','script']);
         });
 
@@ -245,11 +246,11 @@ describe('HTML', () => {
 
             it('Create Group', () => {
 
-                // checkContains('.content', ['h2','#createGroupForm','h3','#groupssTable','#addUsersToGroupForm']);
+                checkContains('.content', ['h2','#createGroupForm','#groupList','#addUsersToGroupForm']);
 
                 checkTextContent('.content h2', "Group Management");
 
-                checkContains('#createGroupForm', ['#createGroupForm h3','#createGroupForm label','#createGroupForm input','#createGroupForm button']);
+                checkContains('#createGroupForm', ['h3','label','input','button']);
 
                 checkTextContent('#createGroupForm h3', "Create Group");
                 checkTextContent('label[for="groupName"]', "Group Name:");
@@ -266,7 +267,6 @@ describe('HTML', () => {
 
             });
 
-
             it('Group List', () => {
 
                 checkTextContent('#groupList', "Groups List");
@@ -281,6 +281,9 @@ describe('HTML', () => {
             });
 
             it('Add Users to Group', () => {
+
+                checkContains('#addUsersToGroupForm', ['#addUsersToGroupForm h3','#addUsersToGroupForm label','#addUsersToGroupForm select','#addUsersToGroupForm button']);
+
 
                 checkTextContent('#addUsersToGroupForm h3', "Add Users to Group");
                 checkTextContent('label[for="groupSelect"]', "Select Group:");
@@ -324,11 +327,12 @@ describe('HTML', () => {
             jest.resetModules();
     
         });
-
         
         it('Title and Body', () => {
 
             checkElement('head', {});
+            checkTextContent('title',"Role Management");
+            checkElement('link[rel="stylesheet"',{href:"css/style.css"});
             checkContains('body', ['.sidebar','.content','script']);
         });
 
@@ -355,9 +359,11 @@ describe('HTML', () => {
 
             it('Create Role', () => {
 
+                checkContains('.content', ['h2','#createRoleForm','h3','#rolesTable','#assignRolesToUserForm','#assignRolesToGroupForm','#roleAssignments']);
+
                 checkTextContent('.content h2', "Role Management");
             
-                //checkContains('#addUserForm', ['#addUserForm h3','#addUserForm label','#addUserForm input','#addUserForm button']);
+                checkContains('#createRoleForm', ['h3','label','input','button']);
     
                 checkTextContent('#createRoleForm h3', "Create Role");
                 checkTextContent('label[for="roleName"]', "Role Name:");
@@ -378,7 +384,6 @@ describe('HTML', () => {
                 checkTextContent('#createRoleForm button', "Create Role");
 
             });
-
 
             it('Role List', () => {
 
@@ -459,7 +464,5 @@ describe('HTML', () => {
         });
 
     });
-
-    
 
 });

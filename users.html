@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Management</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="sidebar">
@@ -13,10 +13,10 @@
         <a id="role" href="roles.html">Role Management</a>
     </div>
     <div class="content">
-        <h2>User Management</h2>
+        <h1>User Management</h1>
 
         <!-- Add User Form -->
-        <form id="addUserForm">
+        <form id="addUserForm" style="display: none;">
             <h3>Add User</h3>
             <label for="userName">Username:</label>
             <input type="text" id="userName" required>
@@ -30,29 +30,227 @@
         </form>
 
         <!-- Users List -->
-        <h3 id="userList">Users List</h3>
-        <table id="usersTable">
-            <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Dynamic user rows go here -->
-                <!-- <td>EP001</td>
-                <td>13Arun@gmail.com</td>
-                <td>ARUN</td>
-                <td>ESWAR</td>
-                <td>
-                    <button onclick="editUser(1)">Edit</button>
-                    <button onclick="deleteUser(1)">Delete</button>
-                </td> -->
-            </tbody>
-        </table>
+        <h2 id="userList">Users List</h2>
+        <div class="tableusers">
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <!-- Dynamic user rows go here -->
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EP001</td>
+                        <td>13Arun@gmail.com</td>
+                        <td>ARUN</td>
+                        <td>ESWAR</td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>   
+                    
+        
+                    
+                </tbody>
+            </table>
+        </div>
 
         <!-- Update User Form -->
         <form id="updateUserForm" style="display:none;">
@@ -68,6 +266,6 @@
             <button type="submit">Update User</button>
         </form>
     </div>
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
